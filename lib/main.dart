@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(title: "Awsome app", home: HomePage()));
+  runApp(MaterialApp(
+    title: "Awsome app",
+    home: HomePage(),
+    theme: ThemeData(primarySwatch: Colors.deepPurple),
+  ));
 }
 
 class HomePage extends StatelessWidget {
@@ -13,40 +17,42 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Awsome app"),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Align(
-          alignment: Alignment.bottomLeft ,
-          child: Container(
-            color: Colors.black,
-            width: 200,
-            height: 400,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                 children: [
-                  Container(
-                    width: 100,
-                    height: 100,
-                    color: Colors.red,
-                  ),
-                  Container(
-                    width: 100,
-                    height: 100,
-                    color: Colors.green,
-                  ),
-                  Container(
-                    width: 100,
-                    height: 100,
-                    color: Colors.yellow ,
-                  ),
-                ],
-              ),
-            )
-          ),
+      body: Container(),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+                accountName: Text("Jay Thanki"),
+                accountEmail: Text("jaythanki200@gmail.com"),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: AssetImage("assets/jay.jpg"),
+              )
+            ),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text("Account"),
+              subtitle: Text("Personal"),
+              trailing: Icon(Icons.edit),
+            ),
+            ListTile(
+              leading: Icon(Icons.email),
+              title: Text("Email"),
+              subtitle: Text("jaythanki2004@gmail.com"),
+              trailing: Icon(Icons.send),
+            ),
+            ListTile(
+              leading: Icon(Icons.phone),
+              title: Text("Contact"),
+              subtitle: Text("9662834365"),
+              trailing: Icon(Icons.call_end),
+            ),
+          ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.edit),
       ),
     );
   }
