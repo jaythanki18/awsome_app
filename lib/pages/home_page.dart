@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:awsome_app/utils/constants.dart';
 import 'package:flutter/material.dart';
 import '../change_name_card.dart';
 import '../drawer.dart';
@@ -37,7 +38,17 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Awsome app"),
+        actions: [
+          IconButton(
+              onPressed: (){
+                Constants.prefs.setBool("loggedIn", false);
+                Navigator.pushReplacementNamed(context, "/login");
+              },
+              icon: Icon(Icons.exit_to_app)
+          )
+        ],
       ),
+
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: data != null
