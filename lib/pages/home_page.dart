@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'package:awsome_app/utils/constants.dart';
 import 'package:flutter/material.dart';
-import '../change_name_card.dart';
-import '../drawer.dart';
+import '../widgets/change_name_card.dart';
+import '../widgets/drawer.dart';
 import 'package:http/http.dart' as http;
 
 class HomePage extends StatefulWidget {

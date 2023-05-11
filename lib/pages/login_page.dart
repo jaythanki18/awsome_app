@@ -2,7 +2,7 @@ import 'package:awsome_app/pages/home_page.dart';
 import 'package:awsome_app/utils/constants.dart';
 import 'package:flutter/material.dart';
 
-import '../bg_image.dart';
+import '../widgets/bg_image.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
